@@ -44,7 +44,43 @@ def bar_chart(x, y, title, size, attribute):
     plt.show()  
 
 
+def double_bar_chart(x, y1, y2, title, size, attribute1, attribute2):
+    '''
+    Description: Takes in two columns/lists and plots them to a bar graph with the same x axis.
+    Also uses the title parameter to label the graph.
+    '''
+    
+    day_count = []
+    increment_day_count = []
+    i = 1
+    while i <= len(x):
+        day_count.append(i)
+        increment_day_count.append(i-.75)
+        i = i + 1 
+        
+    if size == "big":
+        fig, axl1 = plt.subplots(figsize=(20,10))
+    else:
+        fig, axl1 = plt.subplots()
 
+    plt.xlabel("Date")
+    plt.xticks(rotation=45)
+    if attribute1 == "Average Speed" and attribute2 == "Temperature":
+        axl1.set_ylabel("Speed MPH")
+        axl1.set_ylim([8.2, 9.5])
+        axl1.set_xlabel("Date")
+        plt.xticks(rotation=45)
+        axl1.bar(x, y1, width = .25, color = "#FC4C02", edgecolor = "black")
+
+        axl2 = axl1.twinx()
+        axl2.set_ylabel("Temperature at Start")
+        axl2.bar(increment_day_count, y2, width = .25, color = "#87ceeb", edgecolor = "black")
+    plt.title(title)
+    fig.tight_layout()
+
+    plt.show()  
+    
+    
 def plot_box_plot(strava_df):
     plt.figure()
     plt.ylabel("Average Speed in MPH")
@@ -99,5 +135,5 @@ def print_songs(Date, strava_df, spotify_df, og_strava_df):
                 
 def plot_decision_tree(clf, X):
     plt.figure(figsize=(15,15))
-    tree.plot_tree(clf, feature_names=X.columns, class_names = {2: "pop", 1: "rap", 0: "folk"}, filled=True)
+    tree.plot_tree(clf, feature_names=["Temperature at Start", "Max Speed", "Average Speed"], class_names = {2: "pop", 1: "rap", 0: "folk"}, filled=True)
     plt.show()                
