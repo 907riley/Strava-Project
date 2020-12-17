@@ -43,7 +43,8 @@ def bar_chart(x, y, title, size, attribute):
         plt.text(a - .25, b + .01, str("{:.2f}".format(b)))
     plt.show()  
 
-
+# learned how to do a shared graph from the matplotlib website https://matplotlib.org/3.3.3/api/axes_api.html
+# I also used this guide to help me 
 def double_bar_chart(x, y1, y2, title, size, attribute1, attribute2):
     '''
     Description: Takes in two columns/lists and plots them to a bar graph with the same x axis.
