@@ -11,6 +11,7 @@ as well as the genre of music listened to.
 
 ## How to Use
 * Make sure you run both the Technical Report file and the utils.py file completely so everything loads correctly.
+  * All the .csv and .JSON files must be present in the same directory as the .ipynb files for everything to run correctlty.
 * The work for my hypothesis tests is shown in the SourceCode_HypothesisTesting.ipynb file.
 * There are a couple things that can be interacted with in the notebook
   * The print_songs() function can take in any date that I ran on and print the songs that I listened to
