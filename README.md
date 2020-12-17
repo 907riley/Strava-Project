@@ -1,4 +1,4 @@
-# Strava-Project
+# Quantified Self Project
 Final project for CPSC 222  
 By: Riley Sikes
 
